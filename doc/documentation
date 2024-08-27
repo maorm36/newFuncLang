@@ -1,0 +1,162 @@
+Documentation:
+This BNF describes the language's syntax, allowing for the definition of functions, arithmetic operations, Boolean expressions, and lambda expressions:
+
+################################################################################################################################################################
+#### 1. BNF
+#defining the syntax for the program
+# A program can be a single statement or a series of statements.
+<program> ::= <statement> | <statement> ";" <program>
+
+# Defining a statement which can be a function definition, expression, or boolean expression
+<statement> ::= <function_def> | <expression> | <boolean_expr>
+
+# Function definition syntax
+<function_def> ::= "Defun" "(" <identifier> "," <parameters> ")" "(" <identifier> <rel_op> <bool_vals> ")" "or" "(" <expression> ")" | "Defun" "(" <identifier> "," <parameters> ")" "(" <identifier> <rel_op> <number> ")" "or" "(" <expression> ")" | "Defun" "(" <identifier> "," <parameters> ")" <expression>
+# "Defun" is used to define a function, followed by function name, parameters, and body.
+
+# Parameters of a function
+<parameters> ::= <identifier> | <parameters> "," <parameters>
+# Parameters can be a single identifier or a comma-separated list of identifiers.
+
+# An expression in the language
+<expression> ::= <term> | "(" <expression> ")" | <expression> <rel_op> <term> | <expression> <add_op> <term> | <expression> <bool_op> <term> | <expression> <mul_op> <term> | <lambda_expr> | <function_call>  
+# An expression can be a term, a term with addition or subtraction, a lambda expression, or a function call.
+
+# Terms and factors for arithmetic expressions
+<term> ::= <factor> | "(" <term> ")" | <term> <rel_op> <factor> |<term> <mul_op> <factor> | <term> <add_op> <factor> | <term> <bool_op> <factor>
+<factor> ::= <bool_vals> | <number> | <function_call> | <lambda_expr>
+# Terms are composed of factors, which can be numbers, identifiers, expressions in parentheses, function calls, or lambda expressions.
+# Lambda expression syntax
+<lambda_expr> ::= "lambd" "(" <parameters> ")" "(" <expression> ")"
+# "lambd" introduces a lambda expression with parameters and a body.
+
+# Function call syntax
+<function_call> ::= <identifier> "(" <arguments> ")"
+# Function call includes the function name and arguments.
+
+# Arguments for function calls
+<arguments> ::= <number> | <bool_vals> | <function_call> | <arguments> "," <arguments>
+# Arguments can be a single expression or a list of expressions separated by commas.
+
+# Boolean expressions and relations
+<boolean_expr> ::= <relation> | <boolean_expr> <bool_op> <relation>
+<relation> ::= <expression> <rel_op> <expression> | <unary_op> <expression>
+# Boolean expressions include relations and logical operations.
+
+# Arithmetic and boolean operators
+<add_op> ::= "+" | "-"
+<mul_op> ::= "*" | "/"
+<rel_op> ::= "==" | "!=" | ">" | "<" | ">=" | "<="
+<bool_op> ::= "&&" | "||"
+<unary_op> ::= "not"
+<bool_vals> ::= "True" | "False"
+# Operators for addition, multiplication, comparison, and boolean logic.
+
+# Identifiers and numbers
+<identifier> ::= [a-zA-Z_][a-zA-Z0-9_]*
+<number> ::= [0-9]+
+
+################################################################################################################################################################
+
+#### 2. **Language Syntax and Features**
+The language is a functional programming language with the following key features:
+
+- **Functions:**
+  - **Defining Functions:** Functions are defined using the `Defun` keyword, which is followed by the function name, parameters, and the function body.
+  - **Lambda Expressions:** Anonymous functions (lambda expressions) can be defined using the `lambd` keyword.
+  - **Function Calls:** Functions can be called with arguments, allowing for the execution of the function body with provided parameters.
+
+- **Arithmetic Operations:**
+  - The language supports basic arithmetic operations, including addition (`+`), 
+subtraction (`-`), multiplication (`*`), division (`/`), and modulus (`%`).
+
+- **Boolean Logic:**
+  - Logical operations are supported, including AND (`&&`), OR (`||`), and NOT (`not`).
+  - Comparison operations such as equal to (`==`), not equal to (`!=`), greater than (`>`), 
+less than (`<`), greater than or equal to (`>=`), and less than or equal to (`<=`) are available.
+
+- **Recursion:**
+  - Recursion is supported through function calls, allowing functions to call themselves, 
+which is useful for implementing loops or iterative processes.
+
+- **Control Structures:**
+  - The language leverages logical operators and recursion to implement control structures such as conditionals and loops.
+
+################################################################################################################################################################
+  
+#### 3. **Code Comments and Key Components**
+The code includes comments that explain the purpose and functionality of key components and algorithms. Below are examples of the comments included:
+
+- **Lexer:**
+  def get_next_token(self):
+    while self.current_char is not None:
+        # skip whitespaces
+        if self.current_char.isspace():
+            self.skip_whitespace()
+            continue
+
+        # if the char is a punctuation then return it as token and advance by one char
+        elif self.current_char in PUNCTUATIONS:
+            token = Token(PUNCTUATION, self.current_char)
+            self.advance()
+            return token
+
+        # identify int nums as token
+        if self.current_char.isdigit():
+            return Token(INTEGER, self.number())
+
+        # if the char is math operator then return it as token and advance by one char
+        elif self.current_char in OPERATORS and self.current_char != "!":
+            token = Token(OPERATOR, self.current_char)
+            self.advance()
+            return token
+
+- **Parser:**
+# identify the structure of function Call
+elif token.value in self.interpreterCopy.global_env.keys():
+    func_name = token.value
+    self.eat(IDENTIFIER)  # func name
+    self.eat(PUNCTUATION)  # (
+    args = []
+    args.append(self.expr(""))
+    while (
+        self.current_token is not None
+        and self.current_token.type == PUNCTUATION
+        and self.current_token.value == ","
+    ):
+        self.eat(PUNCTUATION)  # ,
+        args.append(self.expr(""))
+
+    self.eat(PUNCTUATION)  # )
+    return FuncCall(func_name, args)  
+
+################################################################################################################################################################
+
+#### 4. *Design Considerations and Assumptions*
+This section discusses the design considerations and assumptions made while developing the interpreter:
+- *Immutability:*
+  - The language enforces immutability by not including any declaration of variables at all. 
+This design choice simplifies reasoning about the program and avoids side effects, making it easier to debug.
+- *Function-Centric Design:*
+  - Functions are the core building blocks in this language. All operations, including control flow (like loops), are performed using functions. This aligns with functional programming principles and promotes the use of recursion over iterative loops.
+- *Error Handling:*
+  - Comprehensive error handling is implemented to detect and report syntax errors, type errors, and runtime errors. The interpreter is designed to provide meaningful error messages to the user, helping them understand and fix issues quickly.
+- *Recursion as a Loop Substitute:*
+  - Since the language does not support traditional looping constructs, recursion is used as the primary method for iteration. This choice simplifies the language but assumes that users are familiar with recursive patterns.
+- *Simplicity:*
+  - The language is designed to be simple and minimalistic, focusing on key functional programming concepts. This simplicity makes the language accessible to beginners but also limits its capabilities compared to more complex languages.
+- *Trade-offs:*
+  - The design of the language involves trade-offs between simplicity and functionality. For example, the decision to use recursion instead of loops simplifies the language but may make it less intuitive for those unfamiliar with recursion.
+- *Performance Considerations:*
+  - The interpreter is designed for educational purposes and is not optimized for high-performance use cases. The use of recursion for loops, while elegant, may lead to stack overflow in cases of deep recursion, especially if not managed properly.
+
+
+
+
+
+
+
+
+    
+
+
