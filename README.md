@@ -81,7 +81,9 @@ And if the user entered N then the following screen will appear:
 +------------------------------------------------------------------------------------------------------+ <br />
 
 Then the user can choose to initiate the prewritten test suite by entering Y or to run code that is written on lambda file that is stored on the user's machine.
-If the user entered N from that point, then the following screen will appear: <br />
+
+If the user entered N from that point, then the following screen will appear: 
+
 +-----------------------------------------------------+ <br />
 |	enter path for the file with .lambda suffix	        | <br />
 |	>>>								                                  | <br />
