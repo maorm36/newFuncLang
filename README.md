@@ -114,4 +114,5 @@ Lambda calculus is a system that forms the base of functional programming langua
 #### 3. *Why Choose Recursion Over Iteration?*
 Recursion was chosen because it's better suited for handling nested structures like abstract syntax trees (ASTs) used in this project. It simplifies managing complex structures and fits well with the functional programming approach used here.
 #### 4. *What are the Benefits and Drawbacks of Immutability?*
-Immutability, or keeping data unchanged, helps make the code easier to understand and less prone to errors. It also works well with concurrent processes. However, it can slow down performance since new copies of data have to be created instead of modifying existing ones. In this project, the benefits of immutability, like consistency, outweigh the downsides.
+Immutability, or keeping data unchanged, helps make the code easier to understand and less prone to errors. 
+It also works well with concurrent processes. However, it can slow down performance since new copies of data have to be created instead of modifying existing ones. In this project, the benefits of immutability, like consistency, outweigh the downsides.
