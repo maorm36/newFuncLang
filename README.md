@@ -97,17 +97,17 @@ Challenges Faced ####
 Managing Recursion: A key challenge was handling the call stack during recursion, especially with deeply nested expressions. If not managed well, this could cause stack overflow errors if the recursion goes too deep.
 Parsing Complex Syntax: Another challenge was developing a parser to handle complex expressions with various operators and functions. The parser needed to be robust enough to correctly understand and process the structure of these expressions, even when there were errors or unexpected inputs.
 
-Solutions to Challenges####
+### Solutions to Challenges
 Optimizing Recursion: We used tail call optimization (TCO) to reduce the risk of stack overflow. TCO reuses stack space for certain recursive calls, allowing the interpreter to handle deeper recursion without using too much memory.
 Custom Error Handling: We added custom error handling to give clear error messages and prevent crashes. This included creating special exception classes and making sure the interpreter can manage and pass on errors properly.
 Parser Optimization: We improved the parser with techniques like lookahead tokens and a clear grammar that focuses on operator precedence and correct expression grouping. This helps the parser efficiently handle complex inputs.
 
 ### Answers to Theoretical Questions
-*What is Functional Programming and How is it Applied Here?* 1. ####
+#### 1. *What is Functional Programming and How is it Applied Here?*
 Functional programming is a way of writing programs where you use functions that don't change data or depend on external factors. In this project, it’s used by keeping data unchanged, using simple functions, and recursion. This ensures the interpreter behaves consistently and predictably.
-*Explain Lambda Calculus and Its Relevance to the Project*  2.####
+#### 2. *Explain Lambda Calculus and Its Relevance to the Project*  
 Lambda calculus is a system that forms the base of functional programming languages, allowing you to express computations using functions. This project uses lambda functions (anonymous functions) in expressions, which is key to how the interpreter processes and evaluates code.
-*Why Choose Recursion Over Iteration?* 3. ####
+#### 3. *Why Choose Recursion Over Iteration?*
 Recursion was chosen because it's better suited for handling nested structures like abstract syntax trees (ASTs) used in this project. It simplifies managing complex structures and fits well with the functional programming approach used here.
-*What are the Benefits and Drawbacks of Immutability?*   4.####
+#### 4. *What are the Benefits and Drawbacks of Immutability?*
 Immutability, or keeping data unchanged, helps make the code easier to understand and less prone to errors. It also works well with concurrent processes. However, it can slow down performance since new copies of data have to be created instead of modifying existing ones. In this project, the benefits of immutability, like consistency, outweigh the downsides.
