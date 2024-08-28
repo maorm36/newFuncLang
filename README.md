@@ -69,9 +69,9 @@ At the start of the program, the following screen will appear:
 The user can enter either capital y ('Y') or capital n ('N'):
 if the user entered Y Then interactive mode will start and the user can begin to write code at the following screen:
 
-+------------------------------------------------------------------------------------------------------+
-|	>>>							                                                                                     |
-+------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------+
+|	>>>							                                                    |
++---------------------------------------------------------------------+
 
 And if the user entered N then the following screen will appear:
 +------------------------------------------------------------------------------------------------------+
@@ -83,10 +83,10 @@ And if the user entered N then the following screen will appear:
 Then the user can choose to initiate the prewritten test suite by entering Y or to run code that is written on lambda file that is stored on the user's machine.
 If the user entered N from that point, then the following screen will appear:
 
-+------------------------------------------------------------------------------------------------------+
-|	enter path for the file with .lambda suffix			                                                     |
-|	>>>								                                                                                   |
-+------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+
+|	enter path for the file with .lambda suffix	        |
+|	>>>								                                  |
++-----------------------------------------------------+
 
 Then the user will enter the path for the location of which the lambda file is stored, 
 and then the program will execute it.
