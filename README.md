@@ -59,26 +59,26 @@ Operators for addition, multiplication, comparison, and boolean logic.
 At the start of the program, the following screen will appear:
 
 +---------------------------------------------------------------------+ <br />
-| would you like to initiate the interactive mode?                    | <br />
-| enter Y in order to activate it or enter N to access the options of:| <br />
-| 1) loading code from a lambda file                                  | <br />
-| 2) activating the test suite                                        | <br />
-| >>>                                                                 | <br />
+| would you like to initiate the interactive mode?                      <br />
+| enter Y in order to activate it or enter N to access the options of:  <br />
+| 1) loading code from a lambda file                                    <br />
+| 2) activating the test suite                                          <br />
+| >>>                                                                   <br />
 +---------------------------------------------------------------------+ <br />
 
 The user can enter either capital y ('Y') or capital n ('N'):
 if the user entered Y Then interactive mode will start and the user can begin to write code at the following screen:
 
 +---------------------------------------------------------------------+ <br />
-|	>>>							                                                    | <br />
+|	>>>							                                                      <br />
 +---------------------------------------------------------------------+ <br />
 
 And if the user entered N then the following screen will appear:
 <br />
 +------------------------------------------------------------------------------------------------------+ <br />
-|	would you like to initiate the test suite?                                                           | <br />
-|	enter Y in order to activate it or enter N to access the option of loading code from a lambda file   | <br />
-|	>>>			                                                                                				     | <br />
+|	would you like to initiate the test suite?                                                             <br />
+|	enter Y in order to activate it or enter N to access the option of loading code from a lambda file     <br />
+|	>>>			                                                                                				       <br />
 +------------------------------------------------------------------------------------------------------+ <br />
 
 Then the user can choose to initiate the prewritten test suite by entering Y or to run code that is written on lambda file that is stored on the user's machine.
@@ -86,8 +86,8 @@ Then the user can choose to initiate the prewritten test suite by entering Y or 
 If the user entered N from that point, then the following screen will appear: 
 
 +-----------------------------------------------------+ <br />
-|	enter path for the file with .lambda suffix	        | <br />
-|	>>>								                                  | <br />
+|	enter path for the file with .lambda suffix	          <br />
+|	>>>								                                    <br />
 +-----------------------------------------------------+ <br />
 
 Then the user will enter the path for the location of which the lambda file is stored, 
