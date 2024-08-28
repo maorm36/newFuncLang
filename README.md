@@ -88,12 +88,12 @@ Then the user will enter the path for the location of which the lambda file is s
 and then the program will execute it.
 
 ### Design Report
-Key Design Decision ####
+#### Key Design Decision
 Functional Programming Approach: The project uses functional programming, which focuses on using functions that don't change data and have no side effects. This makes the code more predictable and easier to debug.
 Use of Recursion: The project relies on recursion to handle tasks like parsing and evaluating expressions. This helps to easily manage nested structures, such as mathematical expressions with parentheses.
 Enforcing Immutability: By keeping data unchanged (immutability), the code avoids accidental changes to the state, making it easier to understand and reducing the chance of bugs.
 
-Challenges Faced ####
+#### Challenges Faced 
 Managing Recursion: A key challenge was handling the call stack during recursion, especially with deeply nested expressions. If not managed well, this could cause stack overflow errors if the recursion goes too deep.
 Parsing Complex Syntax: Another challenge was developing a parser to handle complex expressions with various operators and functions. The parser needed to be robust enough to correctly understand and process the structure of these expressions, even when there were errors or unexpected inputs.
 
