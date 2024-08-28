@@ -1,4 +1,4 @@
-### Documentation of the BNF, Detailed Language Syntax, and Features
+# Documentation of the BNF, Detailed Language Syntax, and Features
 #defining the syntax for the program
 # A program can be a single statement or a series of statements.
 <program> ::= <statement> | <statement> ";" <program>
