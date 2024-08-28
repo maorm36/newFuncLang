@@ -62,7 +62,7 @@ At the start of the program, the following screen will appear:
 |            enter Y in order to activate it or enter N to access the options of:                      |
 |            1) loading code from a lambda file                                                        |
 |            2) activating the test suite                                                              |
-|	           >>>                                                     	                							   |
+|            >>>                                                                                       |
 +------------------------------------------------------------------------------------------------------+
 
 The user can enter either capital y ('Y') or capital n ('N'):
