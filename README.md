@@ -74,6 +74,7 @@ if the user entered Y Then interactive mode will start and the user can begin to
 +---------------------------------------------------------------------+ <br />
 
 And if the user entered N then the following screen will appear:
+<br />
 +------------------------------------------------------------------------------------------------------+ <br />
 |	would you like to initiate the test suite?                                                           | <br />
 |	enter Y in order to activate it or enter N to access the option of loading code from a lambda file   | <br />
