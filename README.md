@@ -59,11 +59,11 @@ Operators for addition, multiplication, comparison, and boolean logic.
 At the start of the program, the following screen will appear:
 
 +---------------------------------------------------------------------+ <br />
-|would you like to initiate the interactive mode?                     | <br />
-|enter Y in order to activate it or enter N to access the options of: | <br />
-|1) loading code from a lambda file                                   | <br />
-|2) activating the test suite                                         | <br />
-|>>>                                                                  | <br />
+| would you like to initiate the interactive mode?                    | <br />
+| enter Y in order to activate it or enter N to access the options of:| <br />
+| 1) loading code from a lambda file                                  | <br />
+| 2) activating the test suite                                        | <br />
+| >>>                                                                 | <br />
 +---------------------------------------------------------------------+ <br />
 
 The user can enter either capital y ('Y') or capital n ('N'):
