@@ -74,7 +74,7 @@ def count_palindromes_per_sublist(lst):
 
 # Solution 8: Prime numbers sorted in descending order
 def primes_sorted_desc(lst):
-    return sorted([x for x in lst if x >= 1 and all(x % i != 0 for i in range(2, int(x**0.5) + 1))], reverse=True)
+    return sorted([x for x in lst if x > 1 and all(x % i != 0 for i in range(2, int(x**0.5) + 1))], reverse=True)
 
 
 def main():
